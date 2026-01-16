@@ -1,0 +1,4 @@
+repository "WorkshopProg3D/WorkshopProg3D@4674045174620@cloud"
+  path "/"
+    br "/main"
+    co "/main"

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,5 +25,20 @@ public class GameManager : MonoBehaviour
 
         UIManager.Instance.ShowMessage("You Win!");
         Time.timeScale = 0f;
+    }
+
+    public void GameOver()
+    {
+        if (gameEnded) return;
+        gameEnded = true;
+
+        UIManager.Instance.ShowMessage("Game Over!");
+        Time.timeScale = 0f;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
+    public GameObject endGamePanel;
     public TextMeshProUGUI messageText;
 
     void Awake()
@@ -20,6 +21,9 @@ public class UIManager : MonoBehaviour
         Instance = this;
 
         if (messageText) messageText.text = "";
+
+        if (endGamePanel)
+            endGamePanel.SetActive(false);
     }
 
     public void UpdateScore(int score)
@@ -35,5 +39,8 @@ public class UIManager : MonoBehaviour
     public void ShowMessage(string msg)
     {
         if (messageText) messageText.text = msg;
+
+        if (endGamePanel)
+            endGamePanel.SetActive(true);
     }
 }
